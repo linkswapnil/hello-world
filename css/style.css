@@ -1,0 +1,106 @@
+body{
+    font-family: 'ArchivoNarrow', Helvetica, Arial, sans-serif;
+}
+header{
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 11;
+    width: 100%;
+    background: #F8F9F0;
+    box-shadow: 27px -14px 40px 23px #fff;
+}
+
+header .cta{
+    position: absolute;
+    top: 4rem;
+    right: 131px;
+}
+header .cta a{
+    text-decoration: none;
+    background: ghostwhite;
+    padding: 11px;
+    color:green;
+}
+header .navigation{
+    background: #4F9A4F;
+}
+
+header .navigation ul {
+    transition-duration: 400ms;
+    transition-delay: 60ms;
+    visibility: visible;
+    opacity: 1;
+    position: static;
+    margin: 0 4rem;
+    padding: 1rem;
+}
+
+header .navigation ul li a {
+    display: inline;
+    padding: 1rem;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header .navigation ul a:hover:after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -6px;
+    bottom: 0;
+    content: '';
+    background: inherit;
+    z-index: -1;
+    -webkit-transform: skewX(-13deg);
+    -moz-transform: skewX(-13deg);
+    -ms-transform: skewX(-13deg);
+    -o-transform: skewX(-13deg);
+    transform: skewX(-13deg);
+    background-color: #83A740;
+    padding: 1rem;
+}
+
+.logo{
+     border: 12px solid #D0586D;
+ }
+
+.logo img{
+    background: #ffffff;
+    z-index: 1;
+    position: relative;
+    margin-top: 6px;
+}
+.seeds{
+    background: url("../images/seeds.png") repeat;
+    height: 55%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    opacity: 0.7;
+    padding: 0px;
+    margin-top: 11px;
+    margin-left: -6px;
+    background-color: purple;
+}
+.company {
+    text-transform: uppercase;
+    display: inline-block;
+    position: absolute;
+    margin-left: 156px;
+    margin-top: -42px;
+    color: darkgreen;
+}
+
+.company strong{
+    float: none;
+    font-size: larger;
+}
+
+.navigation ul li{
+    position: relative;
+    display: inline-block;
+    width: auto;
+    opacity: 0.99;
+}
