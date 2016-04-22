@@ -11,10 +11,26 @@ var google = require('googleapis');
 var googleAuth = require('google-auth-library');
 var gmailClass = google.gmail('v1');
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 9000
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 9000;
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 var OAuth2 = google.auth.OAuth2;
+
+var http = require("http");
+
+http.createServer(function (request, response) {
+
+    // Send the HTTP header
+    // HTTP Status: 200 : OK
+    // Content Type: text/plain
+    response.writeHead(200, {'Content-Type': 'text/plain'});
+
+    // Send the response body as "Hello World"
+    response.end('Hello World\n');
+}).listen(server_port,server_ip_address);
+
+// Console will print the message
+//console.log('Server running at http://127.0.0.1:8081/');
 
 var cs = {"installed":{"client_id":"518447872291-fc17kc3q22j0mesojn36gtmp2jj1m34q.apps.googleusercontent.com","project_id":"carbon-sensor-128208","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://accounts.google.com/o/oauth2/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"UClyvwfJbYlhfUwNmd2iU3RV","redirect_uris":["urn:ietf:wg:oauth:2.0:oob","http://localhost"]}};
 
@@ -42,12 +58,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
-});
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname + '/index.html'));
+// });
 
-app.listen(server_port, server_ip_address, function () {
-});
+// app.listen(server_port, server_ip_address, function () {
+// });
 
 function sendSampleMail(cb) {
     var gmailClass = google.gmail('v1');
